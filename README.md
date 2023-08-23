@@ -70,3 +70,4 @@ Create few files in the js and css file.
 then run `grunt` command from `/project/grunt` folder.
 
 
+# ⚠️ Note : you have to change the domain name in Gruntfile.js in line 89 domainLock: ['your domain name'].
