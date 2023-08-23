@@ -58,16 +58,16 @@ module.exports = function(grunt){
 				}
 			}
 		},
-        uglify: {
-            minify: {
-                options: {
-                    sourceMap: true,
-                },
-                files: {
-                    '../../htdocs/js/app.min.js': ['dist/app.js']
-                }
-            }
-        },
+        //uglify: {
+        //    minify: {
+        //        options: {
+        //            sourceMap: true,
+        //        },
+        //        files: {
+        //            '../../htdocs/js/app.min.js': ['dist/app.js']
+        //        }
+        //    }
+        // },
         //copy: {
         //    jquery: {
         //        files: [
@@ -83,10 +83,10 @@ module.exports = function(grunt){
         //},
         obfuscator: {
             options: {
-                banner: '// obfuscated with grunt-contrib-obfuscator.\n',
+                banner: '// obfuscated with grunt. Last Synk '+datetime+'\n',
                 debugProtection: true,
                 debugProtectionInterval: true,
-                domainLock: ['vigneshsb.fun']
+                domainLock: ['train.vigneshsb.fun']
             },
             task1: {
                 options: {
@@ -138,5 +138,5 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.registerTask('css',['concat:css','cssmin','sass']);    
 	grunt.registerTask('js',['concat:js','uglify','obfuscator']);    
-	grunt.registerTask('default',['concat','cssmin:css','sass','cssmin:scss','uglify','obfuscator','watch']);   
+	grunt.registerTask('default',['concat','cssmin:css','sass','cssmin:scss','obfuscator','watch']);   
 };
